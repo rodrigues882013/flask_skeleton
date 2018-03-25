@@ -21,7 +21,7 @@ def check_auth(request):
 
     token = jwt.encode(user, 'secret', algorithm='HS256')
 
-    return dict(authorized=True, token=str.format('Bearer {0}', token))
+    return dict(authorized=True, token=str.format('Bearer {0}', token.decode('utf-8')))
 
 
 def create_user(register_request):
