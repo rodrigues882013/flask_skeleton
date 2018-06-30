@@ -1,6 +1,6 @@
 import hashlib
-from app import db
-from app.user.models import User
+from flask_backbone.extensions import db
+from flask_backbone.user.models import User
 from flask import abort
 
 
@@ -23,8 +23,8 @@ class UserService:
                 or not email:
             abort(400)
 
-        if cls.find_by_login(login):
-            abort(412)
+        # if cls.find_by_login(login):
+        #     abort(412)
 
         user = User(first_name,
                     last_name,
@@ -39,8 +39,7 @@ class UserService:
                     first_name=user.first_name,
                     last_name=user.last_name,
                     email=user.email,
-                    login=user.login,
-                    password=user.password)
+                    login=user.login)
 
     @staticmethod
     def find_all(page=1):

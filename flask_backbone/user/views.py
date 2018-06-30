@@ -1,8 +1,7 @@
 from flask import request, jsonify, Blueprint
-from app.user.service import UserService as service
-from app.auth.service import requires_auth
+from flask_backbone.auth.service import requires_auth
 from flask_restful import Resource, Api
-
+from .service import UserService as service
 
 user_bp = Blueprint('user_bp', __name__)
 api = Api(user_bp)

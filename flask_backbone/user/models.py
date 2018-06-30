@@ -1,4 +1,4 @@
-from app import db
+from flask_backbone.app import db
 
 
 class User(db.Model):

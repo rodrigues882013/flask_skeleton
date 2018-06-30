@@ -1,0 +1,35 @@
+BaseConfig:
+  PROJECT: fbone,
+  PROJECT_ROOT: 'os.path.abspath(os.path.dirname(os.path.dirname(__file__)))',
+  DEBUG: false,
+  TESTING: false,
+  ADMINS: ['youremail@yourdomain.com'],
+  SECRET_KEY: 'secret_key',
+  LOG_FOLDER: os.path.join(INSTANCE_FOLDER_PATH, 'logs'),
+  MAX_CONTENT_LENGTH : 16777216,
+  INSTANCE_FOLDER_PATH: 'os.path.join("tmp")'
+
+DefaultConfig:
+  PROJECT: fbone,
+  PROJECT_ROOT: 'os.path.abspath(os.path.dirname(os.path.dirname(__file__)))',
+  DEBUG: true,
+  TESTING: false,
+  ADMINS: ['youremail@yourdomain.com'],
+  SECRET_KEY: 'secret_key',
+  LOG_FOLDER: 'os.path.join("logs")',
+  MAX_CONTENT_LENGTH : 16777216,
+  MAIL_HOST: '',
+  FROM_ADDR: '',
+  TO_ADDRS: [''],
+  MAIL_USERNAME: '',
+  MAIL_PASSWORD: '',
+  SQLALCHEMY_ECHO: false,
+  SQLALCHEMY_TRACK_MODIFICATIONS: true,
+  SQLALCHEMY_DATABASE_URI: 'mysql://username:password@server/db?charset=utf8'
+
+TestConfig:
+  TESTING: true,
+  CSRF_ENABLED: false,
+  WTF_CSRF_ENABLED: false,
+  SQLALCHEMY_ECHO: false,
+  SQLALCHEMY_DATABASE_URI: 'sqlite://'
